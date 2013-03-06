@@ -1,1 +1,5 @@
 #!/usr/bin/env ruby
+
+dir_name = ARGV[0]
+pictures = Dir["#{dir_name}/*.jpg"]
+
