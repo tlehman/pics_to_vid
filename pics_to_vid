@@ -1,6 +1,9 @@
-#!/usr/bin/env ruby
+#!/bin/sh
 
-dir_name = ARGV[0]
-pictures = Dir["#{dir_name}/*.jpg"]
+dir_name=`echo $1 | sed 's/\/$//g'`
+photos=$(find $dir_name | grep '\.jpg')
 
+for photo in $photos; do
+  echo $photo
+done
 
