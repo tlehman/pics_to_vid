@@ -1,9 +1,9 @@
 #!/bin/sh
 
+delay_time=10
 dir_name=`echo $1 | sed 's/\/$//g'`
 photos=$(find $dir_name | grep '\.jpg')
 
-for photo in $photos; do
-  echo $photo
-done
+convert -delay $delay_time -loop 0 $photos video.gif
+echo "created video.gif"
 
